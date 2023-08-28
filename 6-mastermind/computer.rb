@@ -1,9 +1,11 @@
 class Computer
-  COLORS = %w[vermelho laranja amarelo verde azul roxo]
+  COLORS = %w[vermelho laranja amarelo verde azul roxo].freeze
+  attr_reader :player_code_guess, :code
+  @player_code_guess = false
+  @code_guessed = false
 
   def initialize
-    # @code = [COLORS.sample, COLORS.sample, COLORS.sample, COLORS.sample]
-    @code = ['verde', 'vermelho', 'azul', 'roxo']
+    @code = [COLORS.sample, COLORS.sample, COLORS.sample, COLORS.sample]
   end
 
   def code_match(code_guess)
@@ -11,19 +13,33 @@ class Computer
       puts "Você acertou o código"
       puts "O código era: #{@code}"
       puts "Fim de jogo..."
-      return winner = true
+      @code_guessed = true
     else
       matches_partials(@code, code_guess)
     end
   end
 
-  def matches_partials(code, code_guess)
+  def code_breaker(code_breaker)
+    if @code == code_breaker
+      puts "O computador acertou seu código0"
+      puts "Fim de jogo..."
+      @player_code_guess = true
+    else
+      @code = [COLORS.sample, COLORS.sample, COLORS.sample, COLORS.sample]
+      puts "A jogada do computador foi: #{@code}"
+      matches_partials(@code, code_breaker)
+      puts "\.Pressione ENTER para continuar."
+      gets.chomp
+    end
+  end
+
+  def matches_partials(code, code_player)
     correct_positions = 0
     correct_colors = 0
     code_counts = Hash.new(0)
     guess_counts = Hash.new(0)
 
-    code_guess.each_with_index do |color, index|
+    code_player.each_with_index do |color, index|
       if code[index] == color
         correct_positions += 1
       else
