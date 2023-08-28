@@ -56,23 +56,3 @@ class Computer
   end
 
 end
-
-
-
-
-
-# def matches_partials(code, code_guess)
-#   correct_positions = 0
-#   correct_colors = 0
-  
-#   code_guess.each_with_index do |color, index|
-#     if code.include?(color) && code[index] == color
-#         correct_positions+=1
-#     end
-#     if code.include?(color)
-#       correct_colors+=1
-#     end
-#   end
-#   puts "Você acertou a cor e posição de: #{correct_positions}"
-#   puts "Você acertou a cor de: #{correct_colors}"
-# end
