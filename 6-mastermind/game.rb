@@ -73,7 +73,3 @@ module MastermindGame
   end
 
 end
-
-include MastermindGame
-master = MasterMind.new
-master.play
