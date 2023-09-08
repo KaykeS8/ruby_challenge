@@ -33,7 +33,6 @@ def save_thank_you_letter(id, form_letter)
   end
 end
 
-
 def clean_home_phone(phone_number)
   phone = phone_number.gsub(/\D/, '')
   case phone
@@ -41,12 +40,13 @@ def clean_home_phone(phone_number)
     puts "Number incorrect"
   when phone.length == 11 && phone[0] == '1'
     phone = phone[1..-1]
+    puts "Number correct: #{phone}"
   when phone.length == 11 && phone[0] != '1'
     puts "Number incorrect"
   when phone.length > 11
     puts "Number incorrect"
   else
-    puts "Correct number"
+    puts "Correct number: #{phone}"
   end
 end
 
@@ -73,5 +73,3 @@ contents.each do |row|
   save_thank_you_letter(id, form_letter)
   
 end
-
-
