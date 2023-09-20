@@ -68,12 +68,12 @@ module Enumerable
     res
   end
 
-  def my_inject(initial_value = self[0])
+  def my_inject(accumalator = self.first)
     return to_enum(:my_inject) unless block_given?
     self.my_each do |el|
-        initial_value = yield el, initial_value
+        accumalator = yield el, accumalator
     end
-    initial_value
+    accumalator
   end
 end
 
