@@ -1,0 +1,10 @@
+--- !ruby/object:Hangman
+secret_word: assessed
+hidden_secret_word: 'a s s e s s e _ '
+attempts: 9
+guessed_letters:
+- a
+- s
+- e
+incorrects_letters: []
+id: 1

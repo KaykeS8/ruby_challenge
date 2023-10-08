@@ -1,0 +1,11 @@
+--- !ruby/object:Hangman
+secret_word: innovation
+hidden_secret_word: 'i n n o v _ _ i o n '
+attempts: 9
+guessed_letters:
+- i
+- n
+- o
+- v
+incorrects_letters: []
+id: 2

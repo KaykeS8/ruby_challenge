@@ -1,0 +1,18 @@
+--- !ruby/object:Hangman
+secret_word: benchmark
+hidden_secret_word: 'b e n c _ _ a _ _ '
+attempts: 5
+guessed_letters:
+- b
+- e
+- e
+- e
+- a
+- n
+- c
+incorrects_letters:
+- w
+- g
+- s
+- t
+id: 3
